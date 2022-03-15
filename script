@@ -1,4 +1,5 @@
 import speedtest
+
 from datetime import datetime
  
 data_atual = datetime.now().strftime('%d/%m/%y')
@@ -8,7 +9,8 @@ spt = speedtest.Speedtest()
  
 dow = spt.download()
 upl =  spt.upload()
-  
+
+
 def verificaçao(nbytes):
     bytes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
     i = 0
@@ -17,5 +19,6 @@ def verificaçao(nbytes):
         i += 1
     f = ('%.2f' % nbytes).rstrip('0').rstrip('.')
     return '%s %s' % (f, bytes[i])
- 
+
+
 print('SPEED TEST'.center(50),f'\nDATA: {data_atual} HORA: {hora_atual}  DOWLOAD: {verificaçao(dow)} UPLOAD: {verificaçao(upl)}')
